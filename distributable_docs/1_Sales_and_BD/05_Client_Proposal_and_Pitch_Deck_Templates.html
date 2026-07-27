@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 Proposal & Pitch Deck Templates - KamiyTech AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F17;
+            --surface-dark: #161E2E;
+            --surface-card: rgba(22, 30, 46, 0.85);
+            --accent-cyan: #00F0FF;
+            --brand-indigo: #4F46E5;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; padding: 2rem; }
+        .doc-container { max-width: 960px; margin: 0 auto; background: var(--surface-card); border: 1px solid var(--border-glass); border-radius: 16px; padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; }
+        .brand span { color: var(--accent-cyan); }
+        .print-btn { background: linear-gradient(135deg, var(--accent-cyan), #00B8FF); color: #0B0F17; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+        .print-btn:hover { box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+        h1 { font-family: var(--font-heading); font-size: 2.25rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        h2 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-cyan); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 0.5rem; }
+        h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-main); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        p, li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.75rem; }
+        ul, ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+        .meta-box { background: rgba(11, 15, 23, 0.6); border: 1px solid var(--border-glass); border-left: 4px solid var(--accent-cyan); padding: 1.25rem; border-radius: 8px; margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+        th, td { border: 1px solid var(--border-glass); padding: 12px; text-align: left; }
+        th { background: var(--surface-dark); color: var(--accent-cyan); font-family: var(--font-heading); }
+        
+        @media print {
+            body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+            .doc-container { border: none !important; box-shadow: none !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; background: #fff !important; }
+            .header-bar button { display: none !important; }
+            h1, h2, h3, th { color: #000 !important; border-color: #ccc !important; }
+            p, li, td { color: #333 !important; }
+            .meta-box { background: #f5f5f5 !important; border-color: #ccc !important; border-left-color: #000 !important; }
+            th { background: #eee !important; }
+            table, th, td { border-color: #ccc !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <div class="header-bar">
+            <div class="brand">KAMIYTECH<span>.AI</span></div>
+            <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+        </div>
+
+        <h1>05. Proposal & Pitch Deck Templates</h1>
+        
+        <div class="meta-box">
+            <p><strong>Purpose:</strong> Standardize client proposal formats, executive pitch deck layouts, commercial quotation templates, and Statement of Work (SOW) attachments for KamiyTech sales operations.</p>
+            <p><strong>Owner:</strong> Creative Director, Head of Sales & CFO</p>
+            <p><strong>Version:</strong> 2.0.0 (APPROVED / LIVE)</p>
+        </div>
+
+        <h2>1. Master Proposal Layout Structure</h2>
+        <ol>
+            <li><strong>Executive Summary & Core Objectives:</strong> High-level project summary and business outcome targets.</li>
+            <li><strong>Business Problem & Opportunity Analysis:</strong> Detailed diagnostic context and solution rationale.</li>
+            <li><strong>Proposed Technical Architecture:</strong> Stack specification (Next.js, React, Node.js/FastAPI, PostgreSQL, Supabase, Vercel/AWS).</li>
+            <li><strong>Scope of Deliverables & Features:</strong> Phased execution breakdown (UX/UI, Engineering, QA & Staging).</li>
+            <li><strong>Milestone Timeline & Roadmap:</strong> Sprints and release schedules.</li>
+            <li><strong>Commercial Investment & Payment Terms:</strong> Fixed-price investment table and 40/30/30 or 50/50 payment triggers.</li>
+            <li><strong>Acceptance & Execution Signoff:</strong> Executive signature block.</li>
+        </ol>
+
+        <h2>2. Master 10-Slide Pitch Deck Structure</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Slide Number</th>
+                    <th>Slide Title</th>
+                    <th>Core Slide Content & Objective</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Slide 1</strong></td>
+                    <td>Title Slide</td>
+                    <td>KamiyTech Logo, Client Name, Proposal Title, Executive Date.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 2</strong></td>
+                    <td>Executive Context</td>
+                    <td>Market challenge context & strategic alignment pillars.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 3</strong></td>
+                    <td>Core Business Problem</td>
+                    <td>Highlighting operational friction, technical debt, & manual delays.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 4</strong></td>
+                    <td>The KamiyTech Solution</td>
+                    <td>Enterprise web app, mobile suite, and AI automation overview.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 5</strong></td>
+                    <td>Technical Architecture</td>
+                    <td>Visual stack diagram: Next.js, FastAPI, PostgreSQL, Cloud Infra.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 6</strong></td>
+                    <td>Scope Breakdown</td>
+                    <td>3-phase execution roadmap from service catalog.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 7</strong></td>
+                    <td>Case Studies & Proven ROI</td>
+                    <td>Quantified metrics (-35% errors, &lt;1.5s load, 50% faster onboarding).</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 8</strong></td>
+                    <td>Agile Delivery Pod</td>
+                    <td>Senior engineering oversight & sprint execution model.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 9</strong></td>
+                    <td>Commercial Investment</td>
+                    <td>Transparent milestone investment tiers & retainer plans.</td>
+                </tr>
+                <tr>
+                    <td><strong>Slide 10</strong></td>
+                    <td>Call to Action</td>
+                    <td>Mutual Action Plan (MAP) & kickoff sprint reservation.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

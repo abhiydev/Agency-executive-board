@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Executive Sales Playbook & Discovery SOP - KamiyTech AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F17;
+            --surface-dark: #161E2E;
+            --surface-card: rgba(22, 30, 46, 0.85);
+            --accent-cyan: #00F0FF;
+            --brand-indigo: #4F46E5;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; padding: 2rem; }
+        .doc-container { max-width: 960px; margin: 0 auto; background: var(--surface-card); border: 1px solid var(--border-glass); border-radius: 16px; padding: 3rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .header-bar { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+        .brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; }
+        .brand span { color: var(--accent-cyan); }
+        .print-btn { background: linear-gradient(135deg, var(--accent-cyan), #00B8FF); color: #0B0F17; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+        .print-btn:hover { box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+        h1 { font-family: var(--font-heading); font-size: 2.25rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        h2 { font-family: var(--font-heading); font-size: 1.5rem; color: var(--accent-cyan); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 0.5rem; }
+        h3 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--text-main); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        p, li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem; }
+        ul, ol { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .meta-box { background: rgba(11, 15, 23, 0.6); border: 1px solid var(--border-glass); border-left: 4px solid var(--accent-cyan); padding: 1.25rem; border-radius: 8px; margin-bottom: 2rem; }
+        .meta-box p { margin-bottom: 0.4rem; font-size: 0.9rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+        th, td { border: 1px solid var(--border-glass); padding: 12px; text-align: left; }
+        th { background: var(--surface-dark); color: var(--accent-cyan); font-family: var(--font-heading); }
+        tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+        code { font-family: var(--font-mono); background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px; color: var(--accent-cyan); font-size: 0.85rem; }
+        blockquote { border-left: 3px solid var(--brand-indigo); background: rgba(79, 70, 229, 0.1); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; }
+        blockquote p { color: var(--text-main); font-style: italic; margin-bottom: 0; }
+        
+        @media print {
+            body { background: #fff !important; color: #000 !important; padding: 0 !important; }
+            .doc-container { border: none !important; box-shadow: none !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; background: #fff !important; }
+            .header-bar button { display: none !important; }
+            h1, h2, h3, th { color: #000 !important; border-color: #ccc !important; }
+            p, li, td { color: #333 !important; }
+            .meta-box { background: #f5f5f5 !important; border-color: #ccc !important; border-left-color: #000 !important; }
+            th { background: #eee !important; }
+            table, th, td { border-color: #ccc !important; }
+            code { background: #eee !important; color: #000 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <div class="header-bar">
+            <div class="brand">KAMIYTECH<span>.AI</span></div>
+            <button class="print-btn" onclick="window.print()">🖨️ Print / Save to PDF</button>
+        </div>
+
+        <h1>01. Executive Sales Playbook & Discovery SOP</h1>
+        
+        <div class="meta-box">
+            <p><strong>Purpose:</strong> Standardize KamiyTech's B2B sales engine, lead qualification framework, discovery diagnostic scripts, objection handling matrix, closing strategies, and sales-to-operations handoff SOP.</p>
+            <p><strong>Owner:</strong> Head of Sales & Chief Marketing Officer (CMO)</p>
+            <p><strong>Version:</strong> 2.0.0 (APPROVED / LIVE)</p>
+            <p><strong>Effective Date:</strong> July 2026</p>
+        </div>
+
+        <h2>1. B2B Sales Funnel Architecture</h2>
+        <p>KamiyTech operates a consultative 7-stage B2B sales pipeline:</p>
+        <ol>
+            <li><strong>Lead Inbound / Outbound Prospecting:</strong> Initial lead capture and 4-hour SLA response.</li>
+            <li><strong>Lead Qualification Sync (15 Mins):</strong> Fast BANT/MEDDIC qualification.</li>
+            <li><strong>Deep Diagnostic Discovery Call (45 Mins):</strong> In-depth operational and technical pain point analysis.</li>
+            <li><strong>Proposal & Solution Presentation (45 Mins):</strong> Live walkthrough of custom technical proposal.</li>
+            <li><strong>Scope Alignment & Commercial Negotiation:</strong> Finalizing scope parameters and SOW terms.</li>
+            <li><strong>Contract Execution & Initial Deposit:</strong> Digital signature and 40%–50% deposit invoice clearing.</li>
+            <li><strong>Formal Sales-to-Ops Handoff:</strong> Briefing documentation and client kickoff meeting.</li>
+        </ol>
+
+        <h2>2. Lead Qualification Framework (Adapted BANT/MEDDIC)</h2>
+        <p>Sales reps must qualify all prospects against 5 Core Filters during the 15-minute qualification sync:</p>
+        <ul>
+            <li><strong>Budget Alignment:</strong> Minimum deal sizes: Landing Pages (₹12k–₹15k), Web Platforms (₹35k–₹2.2L), Mobile Apps & SaaS (₹1.2L–₹10L+), AI Automations (₹45k–₹4.5L).</li>
+            <li><strong>Authority:</strong> Direct access to C-suite economic decision-makers (Founder, CEO, Managing Director, COO).</li>
+            <li><strong>Need & Urgency:</strong> Operational bottleneck or launch target within 30 to 90 days.</li>
+            <li><strong>Technical Fit:</strong> Next.js, React, Node.js, FastAPI, PostgreSQL, React Native, AI APIs.</li>
+            <li><strong>Cultural Fit:</strong> Quality-oriented, collaborative clients valuing structured process over bargain pricing.</li>
+        </ul>
+
+        <h2>3. Discovery Call Script & SOP (45 Mins)</h2>
+        <h3>Diagnostic Question Framework</h3>
+        <blockquote>
+            <p>"Can you walk me through your current process for inventory tracking / client onboarding? Where do the biggest manual bottlenecks or delays happen today, and what is this costing your business each month?"</p>
+        </blockquote>
+        <p>Key areas covered include: Operational Pain Points, Technical Systems & API Sync, Business Impact Metrics, Target Launch Timelines, and Board Decision Process.</p>
+
+        <h2>4. Objection Handling Matrix</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Common Objection</th>
+                    <th>Strategic Reframe</th>
+                    <th>Recommended Response Script</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>"Your price is higher than cheap freelancers."</strong></td>
+                    <td>Reframe from cost to risk reduction & engineering standards.</td>
+                    <td>"We understand you can find low-cost template builders. However, KamiyTech operates as an enterprise technology consultancy—we provide senior architecture, strict type safety, zero technical debt, and long-term support. Fixing broken template code down the road costs 2x to 3x more."</td>
+                </tr>
+                <tr>
+                    <td><strong>"Can we start with a smaller test project first?"</strong></td>
+                    <td>Validate risk mitigation; offer modular Phase 1 scoping.</td>
+                    <td>"We welcome starting small. We can begin with a single-page landing website (₹12,000–₹15,000) or Phase 1 Architecture Blueprint (₹35,000) to test our engineering speed and design quality with zero long-term commitment."</td>
+                </tr>
+                <tr>
+                    <td><strong>"We need to discuss this with our board."</strong></td>
+                    <td>Offer custom executive presentation sync.</td>
+                    <td>"That makes complete sense. Let's schedule a 30-minute Proposal Review Sync for next Tuesday. I will prepare a clean executive summary deck covering ROI, architecture, and milestones for your board."</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>5. Closing Techniques & Pipeline Rules</h2>
+        <ul>
+            <li><strong>Mutual Action Plan (MAP):</strong> Never email proposals blindly without a live walkthrough meeting.</li>
+            <li><strong>48-Hour SLA Follow-Up:</strong> Every active CRM opportunity must have a scheduled task within 48 hours.</li>
+            <li><strong>Closing Checklist:</strong> Contract digitally executed and 40-50% deposit cleared by CFO before engineering kickoff.</li>
+        </ul>
+    </div>
+</body>
+</html>

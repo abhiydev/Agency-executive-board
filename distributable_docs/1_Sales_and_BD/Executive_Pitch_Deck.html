@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KamiyTech AI - Executive Pitch Deck</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F17;
+            --surface-dark: #161E2E;
+            --surface-card: rgba(22, 30, 46, 0.85);
+            --accent-cyan: #00F0FF;
+            --accent-cyan-glow: rgba(0, 240, 255, 0.25);
+            --brand-indigo: #4F46E5;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --border-hover: rgba(0, 240, 255, 0.4);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Navigation Header */
+        header.deck-header {
+            height: 60px;
+            padding: 0 2rem;
+            background: rgba(11, 15, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo span.cyan {
+            color: var(--accent-cyan);
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--brand-indigo), var(--accent-cyan));
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .slide-counter {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--surface-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
+        }
+
+        .btn {
+            background: var(--surface-dark);
+            color: var(--text-main);
+            border: 1px solid var(--border-glass);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            box-shadow: 0 0 12px var(--accent-cyan-glow);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), #00B8FF);
+            color: #0B0F17;
+            font-weight: 700;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            transform: translateY(-1px);
+        }
+
+        /* Presentation Container */
+        .deck-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            max-width: 1280px;
+            height: 720px;
+            background: var(--surface-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.96);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        /* Slide Typography & Layout Components */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .slide-tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-cyan);
+            background: rgba(0, 240, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        h1.slide-title {
+            font-family: var(--font-heading);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        p.slide-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .slide-body {
+            flex: 1;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            width: 100%;
+        }
+
+        /* Content Cards */
+        .card {
+            background: rgba(11, 15, 23, 0.6);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            background: rgba(22, 30, 46, 0.9);
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-main), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* Slide Footer */
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-glass);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Navigation Controls (Bottom Bar) */
+        footer.deck-footer {
+            height: 65px;
+            padding: 0 2rem;
+            background: rgba(11, 15, 23, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-glass);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dots-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--surface-dark);
+            border: 1px solid var(--border-glass);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot.active {
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan-glow);
+            transform: scale(1.2);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* Print CSS Styles for PDF Export */
+        @media print {
+            body {
+                background: #0B0F17 !important;
+                height: auto !important;
+                overflow: visible !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            header.deck-header, footer.deck-footer {
+                display: none !important;
+            }
+
+            .deck-container {
+                padding: 0 !important;
+                display: block !important;
+            }
+
+            .slide {
+                position: relative !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 100vh !important;
+                page-break-after: always !important;
+                border-radius: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 2.5rem 3rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="deck-header">
+        <div class="brand-logo">
+            <div class="logo-badge">K</div>
+            <span>KAMIYTECH<span class="cyan">.AI</span></span>
+        </div>
+        <div class="header-controls">
+            <div class="slide-counter" id="slideCounter">Slide 1 of 10</div>
+            <button class="btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+            <button class="btn btn-primary" onclick="toggleFullScreen()">Fullscreen ⛶</button>
+        </div>
+    </header>
+
+    <!-- Main Presentation Deck Container -->
+    <main class="deck-container">
+
+        <!-- SLIDE 1: Title Slide -->
+        <section class="slide active" id="slide-1">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Executive Presentation 2026</span>
+                    <h1 class="slide-title" style="font-size: 3rem; margin-top: 0.5rem;">Enterprise Technology Consultancy & Digital Modernization</h1>
+                    <p class="slide-subtitle" style="font-size: 1.25rem;">Next-Gen Web Platforms, Mobile Suites & AI Automation for Growth Businesses</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3">
+                    <div class="card" style="border-left: 3px solid var(--accent-cyan);">
+                        <div class="card-icon">🚀</div>
+                        <div class="card-title">Modern Web & SaaS</div>
+                        <div class="card-desc">High-speed Next.js web applications, headless storefronts, and multi-tenant SaaS platforms.</div>
+                    </div>
+                    <div class="card" style="border-left: 3px solid var(--brand-indigo);">
+                        <div class="card-icon">📱</div>
+                        <div class="card-title">Mobile Suites</div>
+                        <div class="card-desc">Cross-platform React Native & Flutter dual-app ecosystems for customers and field ops.</div>
+                    </div>
+                    <div class="card" style="border-left: 3px solid var(--accent-cyan);">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-title">Enterprise AI & RAG</div>
+                        <div class="card-desc">Proprietary vector knowledge bots, document extraction, and WhatsApp business automation.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech AI Commercial Package | Confidential</span>
+                <span>Indian Domestic Market Edition</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Executive Context -->
+        <section class="slide" id="slide-2">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Strategic Positioning</span>
+                    <h1 class="slide-title">Executive Summary & Market Context</h1>
+                    <p class="slide-subtitle">Bridging the gap between budget dev shops and legacy enterprise agencies</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">The Modern Market Challenge</div>
+                        <p class="card-desc" style="margin-bottom: 1rem;">Growing companies are forced to choose between low-cost freelancers who produce fragile code or legacy agencies requiring ₹25L+ retainers and 6-month timelines.</p>
+                        <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.8;">
+                            <li>Over 65% of SMB websites suffer from high bounce rates due to slow templates.</li>
+                            <li>Legacy manual workflows consume up to 40% of employee operating hours.</li>
+                            <li>Startups waste months trying to recruit and retain internal dev talent.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">The KamiyTech Difference</div>
+                        <p class="card-desc" style="margin-bottom: 1rem;">We deliver senior architecture, strict type safety, zero technical debt, and transparent fixed pricing with rapid 3–6 week sprint deployments.</p>
+                        <ul style="color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.8;">
+                            <li><strong>45–55% Gross Profit Margin</strong> operational efficiency model.</li>
+                            <li><strong>100% IP & Source Code Ownership</strong> transferred to clients.</li>
+                            <li><strong>SLA-Backed Delivery</strong> with guaranteed milestone timelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Executive Overview</span>
+                <span>Slide 2 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: The Core Business Problem -->
+        <section class="slide" id="slide-3">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Problem Analysis</span>
+                    <h1 class="slide-title">The Three Operational Friction Points</h1>
+                    <p class="slide-subtitle">Why traditional development models fail scaling enterprises</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="stat-number">01</div>
+                        <div class="card-title">Freelancer Risk</div>
+                        <div class="card-desc">Cheap template builders create unmaintainable spaghetti code, lack security patches, and vanish when bugs break production. Fixing broken sites costs 2x to 3x more.</div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-number">02</div>
+                        <div class="card-title">Agency Overhead</div>
+                        <div class="card-desc">Legacy agencies bill massive monthly minimums, enforce rigid change orders, and delegate actual development to junior trainees, resulting in 6-month launch delays.</div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-number">03</div>
+                        <div class="card-title">Manual Bottlenecks</div>
+                        <div class="card-desc">Relying on fragmented Excel sheets, paper forms, and manual WhatsApp follow-ups causes client churn, inventory errors, and missed revenue opportunities.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Problem Analysis</span>
+                <span>Slide 3 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: The KamiyTech Solution -->
+        <section class="slide" id="slide-4">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">The Solution</span>
+                    <h1 class="slide-title">Enterprise Software Engineering at Startup Speed</h1>
+                    <p class="slide-subtitle">Custom software, modern web, mobile suites, and integrated AI</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <div class="card-title">High-Speed Web Platforms</div>
+                        <div class="card-desc">Custom Next.js & React platforms with page load speeds under 1.5 seconds, optimized for search rankings, ad conversion, and seamless headless CMS editing.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <div class="card-title">AI & Workflow Automation</div>
+                        <div class="card-desc">RAG vector knowledge bots, PDF invoice extraction, and automated WhatsApp CRM alerts that eliminate manual data entry and cut operating costs by 40%.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📱</div>
+                        <div class="card-title">Cross-Platform Mobile Suites</div>
+                        <div class="card-desc">Dual customer and partner apps built with React Native/Flutter, featuring real-time GPS tracking, OTP logins, and UPI payment gateways.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <div class="card-title">Custom ERP & CRM Engines</div>
+                        <div class="card-desc">Bespoke operational management software with role-based permissions, inventory tracking, GST invoicing, and 100% proprietary ownership.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Solution Matrix</span>
+                <span>Slide 4 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Technical Architecture -->
+        <section class="slide" id="slide-5">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Engineering Stack</span>
+                    <h1 class="slide-title">Validated Enterprise Technology Architecture</h1>
+                    <p class="slide-subtitle">Built for high concurrency, type safety, security, and global scale</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan); font-size: 1rem;">FRONTEND</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-top: 0.5rem;">
+                            • Next.js 14+ (App Router)<br>
+                            • React & TypeScript<br>
+                            • Tailwind CSS<br>
+                            • Framer Motion UI
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan); font-size: 1rem;">BACKEND & API</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-top: 0.5rem;">
+                            • Node.js & Express<br>
+                            • Python FastAPI<br>
+                            • Serverless Functions<br>
+                            • REST & GraphQL
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan); font-size: 1rem;">DATABASE & AI</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-top: 0.5rem;">
+                            • PostgreSQL (Supabase)<br>
+                            • Supabase Vector / Pinecone<br>
+                            • OpenAI & Gemini APIs<br>
+                            • LangChain Engine
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan); font-size: 1rem;">CLOUD & INFRA</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; margin-top: 0.5rem;">
+                            • Vercel Global Edge<br>
+                            • AWS Cloud S3 / EC2<br>
+                            • Docker Containers<br>
+                            • GitHub Actions CI/CD
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Architecture Specifications</span>
+                <span>Slide 5 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Core Service Catalog & Capabilities -->
+        <section class="slide" id="slide-6">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Service Offerings</span>
+                    <h1 class="slide-title">Comprehensive Service Catalog & Packaging</h1>
+                    <p class="slide-subtitle">Clear scope boundaries tailored for Indian domestic enterprises</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title">🌐 Web & Platform Packages</div>
+                        <p class="card-desc">• <strong>Single-Page Landing:</strong> ₹12,000 – ₹15,000 (3–5 Days)<br>
+                        • <strong>Starter Multi-Page Web:</strong> ₹35,000 – ₹75,000 (2–3 Weeks)<br>
+                        • <strong>Business Web Platform:</strong> ₹85,000 – ₹2,20,000 (4–5 Weeks)<br>
+                        • <strong>Enterprise Web App & SaaS:</strong> ₹2,50,000 – ₹10,00,000+ (6–10 Weeks)</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">🤖 AI & Mobile Packages</div>
+                        <p class="card-desc">• <strong>Starter Workflow Automation:</strong> ₹45,000 – ₹95,000 (2–3 Weeks)<br>
+                        • <strong>Enterprise AI & RAG Suite:</strong> ₹1,50,000 – ₹4,50,000+ (4–6 Weeks)<br>
+                        • <strong>Starter Mobile App (iOS/Android):</strong> ₹1,20,000 – ₹2,50,000 (4–6 Weeks)<br>
+                        • <strong>Enterprise Mobile Suite:</strong> ₹2,80,000 – ₹7,00,000+ (8–12 Weeks)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Service Packaging</span>
+                <span>Slide 6 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Case Studies & Proven ROI -->
+        <section class="slide" id="slide-7">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Proven Results</span>
+                    <h1 class="slide-title">Measurable Business Impact & Metrics</h1>
+                    <p class="slide-subtitle">Delivering quantified return on investment across key sectors</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-4">
+                    <div class="card" style="text-align: center;">
+                        <div class="stat-number">-35%</div>
+                        <div class="metric-label">Inventory Errors</div>
+                        <div class="card-desc" style="margin-top: 0.5rem;">Manufacturing client automated dispatch tracking with custom web dashboard.</div>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="stat-number">&lt;1.5s</div>
+                        <div class="metric-label">Page Load Speed</div>
+                        <div class="card-desc" style="margin-top: 0.5rem;">Next.js rebuild increased ad conversion by 45% for direct-to-consumer brand.</div>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="stat-number">50%</div>
+                        <div class="metric-label">Faster Onboarding</div>
+                        <div class="card-desc" style="margin-top: 0.5rem;">Educational portal streamlined student document verification & payments.</div>
+                    </div>
+                    <div class="card" style="text-align: center;">
+                        <div class="stat-number">15+</div>
+                        <div class="metric-label">Admin Hours Saved / Wk</div>
+                        <div class="card-desc" style="margin-top: 0.5rem;">WhatsApp AI bot automated lead qualification for professional service firm.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Track Record</span>
+                <span>Slide 7 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Delivery Pod & Team Execution -->
+        <section class="slide" id="slide-8">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Delivery Methodology</span>
+                    <h1 class="slide-title">Agile Pod Architecture & Execution Lifecycle</h1>
+                    <p class="slide-subtitle">Senior technical leadership governing rapid 3-phase delivery</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">Phase 1: Discovery & Design</div>
+                        <div class="card-desc"><strong>Weeks 1–2:</strong> High-fidelity Figma wireframing, ERD database schema design, and technical architecture signoff.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">Phase 2: Sprint Engineering</div>
+                        <div class="card-desc"><strong>Weeks 3–5:</strong> Rapid Next.js/FastAPI engineering sprints, API integration, and weekly staging demo releases.</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">Phase 3: QA & Handover</div>
+                        <div class="card-desc"><strong>Week 6:</strong> Cross-browser testing, mobile verification, cloud deployment, admin training, and code transfer.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Delivery Framework</span>
+                <span>Slide 8 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: Commercial Investment & Payment Terms -->
+        <section class="slide" id="slide-9">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Commercial Structure</span>
+                    <h1 class="slide-title">Transparent Milestone Investment & Retainers</h1>
+                    <p class="slide-subtitle">Fixed-price guarantees with clear, predictable milestone billing</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">Fixed-Price Project Milestones</div>
+                        <p class="card-desc" style="line-height: 1.8;">
+                            • <strong>Milestone 1 (40%):</strong> Advance Deposit upon contract signing & kickoff.<br>
+                            • <strong>Milestone 2 (30%):</strong> Staging Build Demo Review & UAT Signoff.<br>
+                            • <strong>Milestone 3 (30%):</strong> Pre-Launch Production Deployment & Handover.<br>
+                            <em style="color: var(--text-muted); font-size: 0.85rem;">(Single-Page builds use 50% Deposit / 50% Handover terms. 18% GST extra)</em>
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-title" style="color: var(--accent-cyan);">Monthly Support Retainers</div>
+                        <p class="card-desc" style="line-height: 1.8;">
+                            • <strong>Essential Care (₹12,000/mo):</strong> SSL, daily DB backups, 24hr SLA.<br>
+                            • <strong>Growth Care (₹35,000/mo):</strong> Speed tuning, API maintenance, 8hr SLA.<br>
+                            • <strong>Enterprise Managed (₹85,000/mo):</strong> Dedicated TPM, 2hr SEV-1 SLA.<br>
+                            • <strong>Dedicated Pod (₹1.2L – ₹4.5L/mo):</strong> Full-time engineering squad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Commercial Terms</span>
+                <span>Slide 9 of 10</span>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: Call to Action & Kickoff Protocol -->
+        <section class="slide" id="slide-10">
+            <div class="slide-header">
+                <div>
+                    <span class="slide-tag">Immediate Next Steps</span>
+                    <h1 class="slide-title">Project Kickoff & Sprint Reservation</h1>
+                    <p class="slide-subtitle">Ready to transform your digital infrastructure?</p>
+                </div>
+            </div>
+            <div class="slide-body">
+                <div class="grid-2">
+                    <div class="card" style="border-left: 3px solid var(--accent-cyan);">
+                        <div class="card-title">Mutual Action Plan (MAP)</div>
+                        <ol style="color: var(--text-muted); font-size: 0.95rem; padding-left: 1.2rem; line-height: 2;">
+                            <li><strong>Step 1:</strong> 45-Minute Diagnostic Discovery Workshop</li>
+                            <li><strong>Step 2:</strong> Technical Scope & Architecture Signoff</li>
+                            <li><strong>Step 3:</strong> Contract Execution & Deposit Invoice Clearing</li>
+                            <li><strong>Step 4:</strong> Week 1 UX/UI & Database Sprint Kickoff</li>
+                        </ol>
+                    </div>
+                    <div class="card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <div class="card-title" style="font-size: 1.5rem; color: var(--accent-cyan);">Partner With KamiyTech</div>
+                        <p class="card-desc" style="margin: 1rem 0;">Reserve engineering sprint capacity for your business transformation.</p>
+                        <button class="btn btn-primary" style="font-size: 1rem; padding: 12px 24px;">Book Kickoff Call Today ➔</button>
+                        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">contact@kamiytech.com | KamiyTech Executive Team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <span>KamiyTech Executive Pitch Deck 2026</span>
+                <span>Slide 10 of 10</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Controls Bar -->
+    <footer class="deck-footer">
+        <div class="dots-container" id="dotsContainer">
+            <!-- JavaScript dynamically inserts 10 pagination dots -->
+        </div>
+        <div class="nav-buttons">
+            <button class="btn" onclick="prevSlide()">◄ Previous</button>
+            <button class="btn btn-primary" onclick="nextSlide()">Next Slide ►</button>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactive Presentation Logic -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 10;
+
+        function updateSlideDisplay() {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide - 1) {
+                    slide.classList.add('active');
+                }
+            });
+
+            // Update counter text
+            document.getElementById('slideCounter').innerText = `Slide ${currentSlide} of ${totalSlides}`;
+
+            // Update pagination dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide - 1) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlideDisplay();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlideDisplay();
+            }
+        }
+
+        function goToSlide(slideNum) {
+            currentSlide = slideNum;
+            updateSlideDisplay();
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    alert(`Error attempting to enable fullscreen mode: ${err.message}`);
+                });
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Initialize Pagination Dots
+        const dotsContainer = document.getElementById('dotsContainer');
+        for (let i = 1; i <= totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `dot ${i === 1 ? 'active' : ''}`;
+            dot.setAttribute('title', `Slide ${i}`);
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        }
+
+        // Keyboard Navigation Shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>
