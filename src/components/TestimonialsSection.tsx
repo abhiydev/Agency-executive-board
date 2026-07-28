@@ -199,7 +199,7 @@ export const TestimonialsSection: React.FC = () => {
                     {t.avatar}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white tracking-tight">{t.name}</h4>
+                    <h3 className="text-sm font-bold text-white tracking-tight">{t.name}</h3>
                     <p className="text-xs text-[#9CA3AF]">
                       {t.role}, <span className="text-[#00F0FF]">{t.company}</span>
                     </p>

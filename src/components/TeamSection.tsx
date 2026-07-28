@@ -39,12 +39,12 @@ export const TeamSection: React.FC = () => {
     <section id="about" className="py-24 bg-[#0B0F17] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs font-semibold tracking-wider text-[#00F0FF] uppercase">
+          <span className="text-xs font-semibold tracking-wider text-[#00F0FF] uppercase block">
             Leadership & Team Directory
-          </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Meet Our Core Leadership Pod
-          </p>
+          </h2>
           <p className="text-base text-[#9CA3AF]">
             Senior engineering leaders, commercial directors, and growth strategists driving digital transformation.
           </p>

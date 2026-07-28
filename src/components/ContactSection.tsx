@@ -25,12 +25,12 @@ export const ContactSection: React.FC = () => {
     <section id="contact" className="py-24 bg-[#0B0F17] relative border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs font-semibold tracking-wider text-[#00F0FF] uppercase">
+          <span className="text-xs font-semibold tracking-wider text-[#00F0FF] uppercase block">
             Get In Touch
-          </h2>
-          <p className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Schedule a Strategy Session
-          </p>
+          </h2>
           <p className="text-base text-[#9CA3AF]">
             Discuss your software roadmap, web platform, or AI automation goals with our executive team in Indore.
           </p>
@@ -143,7 +143,7 @@ export const ContactSection: React.FC = () => {
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-base">Direct WhatsApp Support</h4>
+                  <h3 className="text-white font-bold text-base">Direct WhatsApp Support</h3>
                   <p className="text-xs text-[#9CA3AF]">Instant reply from Business Operations</p>
                 </div>
               </div>
@@ -162,9 +162,9 @@ export const ContactSection: React.FC = () => {
 
             {/* Corporate Location Details */}
             <GlassCard className="space-y-4">
-              <h4 className="text-white font-bold text-base border-b border-white/10 pb-3">
+              <h3 className="text-white font-bold text-base border-b border-white/10 pb-3">
                 Registered Headquarters
-              </h4>
+              </h3>
               <div className="space-y-3 text-sm text-[#9CA3AF]">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-[#00F0FF] shrink-0 mt-0.5" />
