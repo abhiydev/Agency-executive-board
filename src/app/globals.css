@@ -23,6 +23,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Typography Scaling & Font Families */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono, .font-code, .metric-number {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 /* Glassmorphism Design System Primitives */
 .kamiy-glass-card {
   background: rgba(22, 30, 46, 0.75);
@@ -36,8 +46,8 @@ body {
 
 .kamiy-glass-card:hover {
   border-color: rgba(0, 240, 255, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px 0 rgba(0, 240, 255, 0.18);
 }
 
 .kamiy-cyan-glow {

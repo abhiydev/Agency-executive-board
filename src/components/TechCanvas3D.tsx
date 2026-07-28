@@ -134,7 +134,6 @@ export const TechCanvas3D: React.FC = () => {
 
     // 3. Energy Pulses along Node Connections
     const pulses: Pulse[] = [];
-    let pulseTimer = 0;
 
     // 3D Perspective Projection Matrix Helper
     const fov = 420;

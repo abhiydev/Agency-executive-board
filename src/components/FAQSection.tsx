@@ -191,7 +191,7 @@ export const FAQSection: React.FC = () => {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveCategory(tab.id as any)}
+                onClick={() => setActiveCategory(tab.id)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
                   activeCategory === tab.id
                     ? "bg-[#00F0FF] text-[#0B0F17] shadow-[0_0_15px_rgba(0,240,255,0.4)] font-bold"
@@ -208,7 +208,7 @@ export const FAQSection: React.FC = () => {
         <div className="space-y-4">
           {filteredFaqs.length === 0 ? (
             <GlassCard className="text-center py-12">
-              <p className="text-base text-[#9CA3AF]">No questions matching "{searchQuery}".</p>
+              <p className="text-base text-[#9CA3AF]">No questions matching &quot;{searchQuery}&quot;.</p>
               <button
                 onClick={() => {
                   setSearchQuery("");

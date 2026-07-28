@@ -6,11 +6,8 @@ import {
   Star,
   Quote,
   ShieldCheck,
-  Building,
   TrendingUp,
   Award,
-  Users,
-  CheckCircle2
 } from "lucide-react";
 
 interface Testimonial {
@@ -180,14 +177,14 @@ export const TestimonialsSection: React.FC = () => {
 
                 {/* Sub-metric label */}
                 <div className="text-xs text-[#9CA3AF] font-medium italic">
-                  "{t.metricLabel}"
+                  &quot;{t.metricLabel}&quot;
                 </div>
 
                 {/* Testimonial Quote */}
                 <div className="relative">
                   <Quote className="w-8 h-8 text-[#00F0FF]/15 absolute -top-3 -left-2 pointer-events-none" />
                   <p className="text-sm text-[#F9FAFB] leading-relaxed relative z-10 pt-2">
-                    "{t.quote}"
+                    &quot;{t.quote}&quot;
                   </p>
                 </div>
               </div>

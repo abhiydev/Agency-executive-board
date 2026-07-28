@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
               <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Clock className="w-5 h-5" />
-                  <span className="text-2xl font-bold text-white">&lt;1.5s</span>
+                  <span className="text-2xl font-bold font-mono text-white">&lt;1.5s</span>
                 </div>
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Global Load Speed</p>
               </div>
@@ -61,7 +61,7 @@ export const HeroSection: React.FC = () => {
               <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <ShieldCheck className="w-5 h-5" />
-                  <span className="text-2xl font-bold text-white">99.9%</span>
+                  <span className="text-2xl font-bold font-mono text-white">99.9%</span>
                 </div>
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Uptime Guarantee</p>
               </div>
@@ -69,7 +69,7 @@ export const HeroSection: React.FC = () => {
               <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Zap className="w-5 h-5" />
-                  <span className="text-2xl font-bold text-white">50%+</span>
+                  <span className="text-2xl font-bold font-mono text-white">50%+</span>
                 </div>
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Hours Saved via AI</p>
               </div>
@@ -77,7 +77,7 @@ export const HeroSection: React.FC = () => {
               <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Award className="w-5 h-5" />
-                  <span className="text-2xl font-bold text-white">100%</span>
+                  <span className="text-2xl font-bold font-mono text-white">100%</span>
                 </div>
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">IP Ownership Handover</p>
               </div>

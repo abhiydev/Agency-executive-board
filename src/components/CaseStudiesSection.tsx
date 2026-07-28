@@ -11,7 +11,6 @@ import {
   Smartphone,
   Search,
   ExternalLink,
-  Layers,
   X
 } from "lucide-react";
 
@@ -196,7 +195,7 @@ export const CaseStudiesSection: React.FC = () => {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() => setActiveTab(tab.id as "all" | "ai" | "web" | "mobile" | "seo")}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-[#00F0FF] text-[#0B0F17] shadow-[0_0_20px_rgba(0,240,255,0.4)] font-bold scale-105"
@@ -341,7 +340,7 @@ export const CaseStudiesSection: React.FC = () => {
 
             {/* Quote */}
             <div className="p-4 rounded-xl bg-[#0B0F17]/80 border-l-4 border-[#00F0FF] italic text-sm text-white">
-              "{selectedStudy.quote.text}"
+              &quot;{selectedStudy.quote.text}&quot;
               <div className="not-italic text-xs text-[#00F0FF] font-semibold mt-2">
                 — {selectedStudy.quote.author}, {selectedStudy.quote.role}
               </div>

@@ -56,17 +56,6 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
     message: "",
   });
 
-  // Sync initial service when prop changes
-  useEffect(() => {
-    if (initialServiceId) {
-      const match = SERVICES_CATALOG.find(
-        (s) => s.id === initialServiceId || s.title === initialServiceId
-      );
-      if (match) {
-        setSelectedService(match);
-      }
-    }
-  }, [initialServiceId]);
 
   // Handle ESC key press & Lock Body Scroll
   const handleKeyDown = useCallback(
