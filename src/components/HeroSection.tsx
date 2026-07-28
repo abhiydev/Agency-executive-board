@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "./Button";
 import { StrategyModal } from "./StrategyModal";
+import { TechCanvas3D } from "./TechCanvas3D";
 import { Zap, ShieldCheck, Clock, Award, ArrowRight } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
@@ -11,6 +12,9 @@ export const HeroSection: React.FC = () => {
   return (
     <>
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0B0F17]">
+        {/* Interactive 3D Canvas Background */}
+        <TechCanvas3D />
+
         {/* Glow Ambient Gradients */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#00F0FF]/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute top-1/3 right-10 w-[400px] h-[250px] bg-[#4F46E5]/15 blur-[140px] rounded-full pointer-events-none" />
@@ -18,7 +22,7 @@ export const HeroSection: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto space-y-6">
             {/* Badge Tag */}
-            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#161E2E] border border-white/10 text-xs font-semibold tracking-wide text-[#00F0FF]">
+            <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#161E2E]/90 backdrop-blur-md border border-white/10 text-xs font-semibold tracking-wide text-[#00F0FF] shadow-[0_0_20px_rgba(0,240,255,0.2)]">
               <Zap className="w-4 h-4 fill-[#00F0FF] text-[#00F0FF]" />
               <span>NEXT-GEN TECHNOLOGY CONSULTANCY & AI AGENCY</span>
             </div>
@@ -36,7 +40,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Call to Action Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button onClick={() => setModalOpen(true)} variant="primary" size="lg" className="w-full sm:w-auto">
+              <Button onClick={() => setModalOpen(true)} variant="primary" size="lg" className="w-full sm:w-auto shadow-[0_0_30px_rgba(0,240,255,0.3)]">
                 Schedule Strategy Session <ArrowRight className="w-5 h-5 ml-2 inline" />
               </Button>
               <Button href="#estimator" variant="outline" size="lg" className="w-full sm:w-auto">
@@ -46,7 +50,7 @@ export const HeroSection: React.FC = () => {
 
             {/* Trust Counter Metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-white/10 mt-12">
-              <div className="p-4 rounded-xl bg-[#161E2E]/50 border border-white/5">
+              <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Clock className="w-5 h-5" />
                   <span className="text-2xl font-bold text-white">&lt;1.5s</span>
@@ -54,7 +58,7 @@ export const HeroSection: React.FC = () => {
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Global Load Speed</p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#161E2E]/50 border border-white/5">
+              <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <ShieldCheck className="w-5 h-5" />
                   <span className="text-2xl font-bold text-white">99.9%</span>
@@ -62,7 +66,7 @@ export const HeroSection: React.FC = () => {
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Uptime Guarantee</p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#161E2E]/50 border border-white/5">
+              <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Zap className="w-5 h-5" />
                   <span className="text-2xl font-bold text-white">50%+</span>
@@ -70,7 +74,7 @@ export const HeroSection: React.FC = () => {
                 <p className="text-xs text-[#9CA3AF] mt-1 font-medium">Hours Saved via AI</p>
               </div>
 
-              <div className="p-4 rounded-xl bg-[#161E2E]/50 border border-white/5">
+              <div className="p-4 rounded-xl bg-[#161E2E]/70 backdrop-blur-md border border-white/10 hover:border-[#00F0FF]/40 transition-all">
                 <div className="flex items-center justify-center space-x-2 text-[#00F0FF]">
                   <Award className="w-5 h-5" />
                   <span className="text-2xl font-bold text-white">100%</span>
