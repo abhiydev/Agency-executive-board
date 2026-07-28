@@ -1,94 +1,47 @@
-# KAMIYTECH EOS ALL PHASES (1, 2, 3 & 4) EXECUTION WALKTHROUGH
+# WALKTHROUGH: KAMIYTECH.COM PRODUCTION WEB APPLICATION
 
-> **EXECUTIVE SUMMARY**
-> Phase 1 (Commercial Core), Phase 2 (Sales & Marketing Engine), Phase 3 (Delivery Operations & Quality Control), and Phase 4 (Scaling, HR & Knowledge Infrastructure) of the KamiyTech Master Implementation Plan have been **100% EXECUTED AND AUDITED**. All 16 core commercial, sales, brand, legal, operational, QA, partner, HR, financial, and AI infrastructure documents have been authored, validated by the Executive Board, and indexed into the Single Source of Truth (SSOT) Master Knowledge Base repository (`v1.5.0`).
-
----
-
-## Master Architecture Map
-
-```mermaid
-graph TD
-    Phase1[Phase 1: Commercial Core & Risk] --> P1_1[P1.1 Positioning & Value Prop]
-    Phase1 --> P1_2[P1.2 Rate Card & Pricing Framework]
-    Phase1 --> P1_3[P1.3 Master Legal Framework]
-    Phase1 --> P1_4[P1.4 Detailed Service Catalog]
-    Phase1 --> P1_5[P1.5 Client Onboarding & Delivery SOP]
-    Phase1 --> P1_6[P1.6 Engineering Architecture Guidelines]
-    
-    Phase2[Phase 2: Sales & Marketing Engine] --> P2_1[P2.1 Sales Playbook & Discovery SOP]
-    Phase2 --> P2_2[P2.2 Proposal & Pitch Deck Templates]
-    Phase2 --> P2_3[P2.3 Brand Identity & Design System]
-    Phase2 --> P2_4[P2.4 Website Copy & Content Strategy]
-    
-    Phase3[Phase 3: Delivery Operations & QA] --> P3_1[P3.1 Maintenance Retainer & SLA SOP]
-    Phase3 --> P3_2[P3.2 QA Code Review & Testing SOP]
-    Phase3 --> P3_3[P3.3 Partner Onboarding & Vetting SOP]
-    
-    Phase4[Phase 4: Scaling & HR Infrastructure] --> P4_1[P4.1 HR & People Ops Handbook]
-    Phase4 --> P4_2[P4.2 Financial Planning & Invoicing SOP]
-    Phase4 --> P4_3[P4.3 AI Automation & Knowledge Base SOP]
-    
-    Phase1 --> Index[Master Knowledge Base Index v1.5.0]
-    Phase2 --> Index
-    Phase3 --> Index
-    Phase4 --> Index
-```
+> **SUMMARY:** The official high-converting production web application for `KamiyTech.com` has been designed, architected, and built following our 5-Phase SDLC Protocol. The web app integrates our P2.3 Design System tokens, P2.4 Website Copy, verified vector logo assets (`logo.svg` & `logo-icon.svg`), official executive team roster, and real-time domestic Project Cost Estimator.
 
 ---
 
-## Detailed Directory of Active Knowledge Base Documents
+## 🛠️ Accomplished Phases & Deliverables
 
-### Phase 1 Documents (Commercial & Engineering Foundation)
-1. **📄 [P1.1 Strategic Positioning & Niche Value Proposition](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.1_positioning_and_value_prop.md)**
-   - Market positioning, 5 ICP personas, vertical USP matrix, brand tone of voice.
-2. **📄 [P1.2 Rate Card, Pricing Packages & Quotation Framework](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.2_rate_card_and_pricing_framework.md)**
-   - Indian Domestic Rate Card (INR ₹), single-page landing site (₹12k–₹15k), multi-page web tiers, mobile app tiers, AI automation, retainers, and GST rules.
-3. **📄 [P1.3 Master Legal Framework](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.3_master_legal_framework.md)**
-   - MSA core clauses, SOW standard template, NDA structures, Subcontractor Partner Agreements (IP assignment, 24mo non-solicit).
-4. **📄 [P1.4 Detailed Service Catalog](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.4_service_catalog.md)**
-   - Detailed specification of all 12 services: purpose, business problem, scope, deliverables, client responsibilities, executive ownership, dependencies, and out-of-scope items.
-5. **📄 [P1.5 Client Onboarding & Project Delivery SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.5_client_onboarding_and_delivery_sop.md)**
-   - Sales-to-Ops handoff, environment setup, 60-min kickoff agenda, bi-weekly demo cadences, QA gate checklists, production launch SOP.
-6. **📄 [P1.6 Engineering Architecture & Technology Guidelines](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P1.6_engineering_architecture_guidelines.md)**
-   - Standard stack specs (Next.js, FastAPI, PostgreSQL, Supabase, React Native, Tailwind, Vercel/AWS), App Router layout, TypeScript rules, AI API integration standards, CI/CD security pipelines.
+### Phase 1: Architecture & Design System Setup
+- Initialized Next.js 15 (App Router), React 19, TypeScript, and Tailwind CSS.
+- Configured P2.3 Design System tokens in `src/app/globals.css`:
+  - Deep Space Obsidian (`#0B0F17`)
+  - Slate Glass Surface (`#161E2E`)
+  - Electric Cyan (`#00F0FF`) & Deep Indigo (`#4F46E5`)
+- Integrated vector brand assets into `public/assets/logo/logo.svg` and `public/icon.svg`.
 
 ---
 
-### Phase 2 Documents (Sales & Marketing Engine)
-7. **📄 [P2.1 Sales Playbook & Discovery Interview SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P2.1_sales_playbook_and_discovery_sop.md)**
-   - B2B sales funnel, adapted BANT/MEDDIC lead qualification, 45-min diagnostic discovery script, objection handling matrix, Mutual Action Plan (MAP) closing.
-8. **📄 [P2.2 Proposal & Pitch Deck Master Templates](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P2.2_proposal_and_pitch_templates.md)**
-   - Production proposal markdown layout, SOW attachments, 10-slide executive pitch deck structure.
-9. **📄 [P2.3 Brand Identity System & Design Tokens](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P2.3_brand_identity_and_design_system.md)**
-   - Creative Director's brand guidelines, Obsidian/Cyan/Indigo color tokens, Outfit/Inter typography scales, glassmorphism CSS components, presentation styling.
-10. **📄 [P2.4 Website Copy & Content Strategy](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P2.4_website_copy_and_content_strategy.md)**
-    - Complete page-by-page production copy layout for `KamiyTech.com` (Home, Services, Case Studies, Contact), SEO keyword map, inbound content marketing engine.
+### Phase 2: Core Components & Layout Shell
+- [src/components/Navbar.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/Navbar.tsx): Sticky glass navigation bar with vector brand logo, navigation links (`#services`, `#about`, `#estimator`, `#why-us`, `#contact`), and "Schedule Call" CTA.
+- [src/components/Footer.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/Footer.tsx): Corporate footer featuring logo, quick links, registered Indore HQ address (`1/32, behind SICA School Road, Vijay Nagar, Scheme No 54, Indore, MP 452010`), and main business line (`+91 9977858817` Ankit Vaja).
+- [src/components/GlassCard.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/GlassCard.tsx): Reusable glassmorphism card primitive.
+- [src/components/Button.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/Button.tsx): Electric Cyan & Deep Indigo CTA buttons.
 
 ---
 
-### Phase 3 Documents (Delivery Operations & Quality Assurance)
-11. **📄 [P3.1 Maintenance Retainer & Support SLA SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P3.1_maintenance_retainer_and_sla_sop.md)**
-    - Post-launch maintenance packages (Essential Care ₹12k/mo, Growth Care ₹35k/mo, Enterprise Managed ₹85k/mo), SLA response time guarantees (2hr emergency for SEV-1), uptime monitoring protocols, RCA requirements.
-12. **📄 [P3.2 QA Code Review & Testing SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P3.2_qa_code_review_and_testing_sop.md)**
-    - Code review PR standards, Vitest/Jest/PyTest unit testing rules (>80% coverage), Playwright E2E testing, 10-point OWASP pre-release security audit checklist.
-13. **📄 [P3.3 Specialist Partner Onboarding & Vetting SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P3.3_partner_onboarding_and_vetting_sop.md)**
-    - Partner Core + Specialist Pod model, 4-step technical vetting rubric (85/100 pass), white-label `@kamiytech.com` setup, rate capping rules to protect margin, quarterly scorecards.
+### Phase 3: Page Sections & Executive Roster Integration
+- [src/components/HeroSection.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/HeroSection.tsx): Hero banner featuring `⚡ NEXT-GEN TECHNOLOGY CONSULTANCY`, H1 headline, subheadline, trust metric counters (<1.5s load speed, 99.9% uptime, 50%+ hours saved via AI, 100% IP ownership).
+- [src/components/ServicesShowcase.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/ServicesShowcase.tsx): Interactive grid detailing all 12 services across Web Solutions, Custom Software, AI & Automation, Mobile Apps, Marketing & SEO (Sahil Dhameliya), and Maintenance Retainers.
+- [src/components/TeamSection.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/TeamSection.tsx): Executive team spotlight cards:
+  - **Abhishek Chedwal** — Founder & CEO / CTO
+  - **Ankit Vaja** — Co-Founder & Business Manager (`+91 9977858817`)
+  - **Sahil Dhameliya** — Marketing & SEO Lead
+  - **Vaidehi Gupta** — Business Executive
+- [src/components/WhyChooseUs.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/WhyChooseUs.tsx): Differentiator grid (Enterprise Code Quality, AI-First Automation, Fixed INR Pricing, Partner Scale).
 
 ---
 
-### Phase 4 Documents (Scaling, HR & AI Infrastructure)
-14. **📄 [P4.1 HR & People Operations Handbook](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P4.1_hr_and_people_ops_handbook.md)**
-    - Recruitment pipelines, contractor-to-employee conversion rubric, OKR performance evaluation, remote work communication etiquette, onboarding/offboarding checklists.
-15. **📄 [P4.2 Financial Planning & Invoicing SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P4.2_financial_planning_and_invoicing_sop.md)**
-    - Unit economic benchmarks (45%-55% gross margin minimum), 40/30/30 (and 50/50) milestone billing, retainer billing upfront, contractor payout policies (Net-15), 3-month operating reserve sweeping.
-16. **📄 [P4.3 AI Automation & Knowledge Base SOP](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/P4.3_ai_automation_and_knowledge_base_sop.md)**
-    - Automated SSOT vector re-indexing, AI knowledge drift detection matrix, executive AI agent library (Sales, Tech Auditor, Legal Verifier), enterprise zero-training data privacy mandates.
+### Phase 4: Interactive Project Cost Estimator & Lead Engine
+- [src/components/ProjectCostEstimator.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/ProjectCostEstimator.tsx): Dynamic real-time domestic rate card calculator (P1.2 Rate Card) in INR (₹) with separate 18% GST itemization, 40/30/30 or 50/50 milestone billing schedule, and pre-filled WhatsApp link (`+91 9977858817`).
+- [src/components/ContactSection.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/components/ContactSection.tsx): Strategy session request form + direct WhatsApp chat trigger (`+91 9977858817`) + Indore HQ address card.
 
 ---
 
-## Conclusion & System Status
-
-With all 16 executive documents synchronized, **KamiyTech is fully audited, zero-conflict, commercially sound, operationally scalable, and powered by automated AI governance**.
-
-- **Master Knowledge Base Repository:** [index.md](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/knowledge_base/index.md) (`v1.5.0`)
+### Phase 5: Verification & Quality Assurance
+- [src/app/page.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/app/page.tsx): Main landing page composition linking all sections into a seamless user journey.
+- [src/app/layout.tsx](file:///c:/Users/abhis/OneDrive/Desktop/kamiytechAI/src/app/layout.tsx): Configured SEO metadata, Google Fonts (`Outfit` & `Inter`), and favicon (`/icon.svg`).

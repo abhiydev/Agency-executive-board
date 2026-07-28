@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #0B0F17;
+  --surface: #161E2E;
+  --accent-cyan: #00F0FF;
+  --brand-indigo: #4F46E5;
+  --text-main: #F9FAFB;
+  --text-muted: #9CA3AF;
+  --border-glass: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Design System Primitives */
+.kamiy-glass-card {
+  background: rgba(22, 30, 46, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.kamiy-glass-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px 0 rgba(0, 240, 255, 0.15);
+}
+
+.kamiy-cyan-glow {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+}
+
+.kamiy-text-gradient {
+  background: linear-gradient(135deg, #00F0FF 0%, #3B82F6 50%, #4F46E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
